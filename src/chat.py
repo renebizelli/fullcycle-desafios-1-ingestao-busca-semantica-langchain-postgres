@@ -6,7 +6,6 @@ reset = "\033[0m"
 
 def main():
 
-
     while True:
 
         chain = search_prompt()

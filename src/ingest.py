@@ -6,8 +6,7 @@ from langchain_openai  import OpenAIEmbeddings
 from langchain_postgres import PGVector    
 from langchain_core.documents import Document    
 
-load_dotenv()
-
+load_dotenv(dotenv_path= "../.env.example")
 
 def validate_env():
     print('Validando variáveis de ambiente...')

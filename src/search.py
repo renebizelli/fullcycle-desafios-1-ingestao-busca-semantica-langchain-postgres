@@ -6,7 +6,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import chain
 from langchain_core.output_parsers import StrOutputParser
 
-load_dotenv()
+load_dotenv(dotenv_path= "../.env.example")
 
 def validate_env():
     print('Validando variáveis de ambiente...')
