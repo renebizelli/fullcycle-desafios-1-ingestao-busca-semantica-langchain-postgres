@@ -2,8 +2,9 @@
 
 # Ambiente
 
-- Todos os parâmetros foram inseridos no arquivo de ambiente .env.
-- O caminho completo com o nome do arquivo PDF deve ser inserido na chave PDF_PATH do arquivo .env.
+- Todos os parâmetros foram inseridos no arquivo de ambiente .env.example
+- O caminho completo com o nome do arquivo PDF deve ser inserido na chave PDF_PATH do arquivo .env.example
+- Deve ser informado a KEY da OpenAI na chave OPENAI_API_KEY, substituindo o valor XXXX
 
 # Subir Banco de dados.
 
@@ -11,8 +12,8 @@
 
 # Ingestão de dados
 
-- rodar em src > python3 ingest.py
+- rodar > python src/ingest.py
 
 # Rodar o Chat
 
-- rodar em src > python3 chat.py
+- rodar > python src/chat.py

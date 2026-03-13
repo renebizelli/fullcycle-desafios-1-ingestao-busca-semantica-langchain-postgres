@@ -6,7 +6,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import chain
 from langchain_core.output_parsers import StrOutputParser
 
-load_dotenv(dotenv_path= "../.env.example")
+load_dotenv(dotenv_path= "./.env.example")
 
 def validate_env():
     print('Validando variáveis de ambiente...')
@@ -57,7 +57,7 @@ model = ChatOpenAI(model=os.getenv("OPENAI_MODEL"), temperature=os.getenv("OPENA
 
 @chain
 def _search(question: str):
-    results = store.similarity_search_with_score(query=question, k=int(os.getenv("SIMILARITY_K", 5)))
+    results = store.similarity_search_with_score(query=question, k=int(os.getenv("SIMILARITY_K", 10)))
 
     r = [
         doc.page_content.strip()

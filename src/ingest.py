@@ -6,7 +6,7 @@ from langchain_openai  import OpenAIEmbeddings
 from langchain_postgres import PGVector    
 from langchain_core.documents import Document    
 
-load_dotenv(dotenv_path= "../.env.example")
+load_dotenv(dotenv_path= "./.env.example")
 
 def validate_env():
     print('Validando variáveis de ambiente...')
@@ -17,8 +17,7 @@ def validate_env():
 
 def docs_loader() -> list[Document]:
     print('Carregando PDF...')
-    PDF_PATH = os.getenv("PDF_PATH")
-    loader = PyPDFLoader(PDF_PATH) 
+    loader = PyPDFLoader(os.getenv("PDF_PATH")) 
     return loader.load()
 
 
@@ -26,7 +25,7 @@ def get_chunks(docs: list[Document]) -> list[Document]:
     print('Dividindo documentos em chunks...')
     return RecursiveCharacterTextSplitter(
                     chunk_size= int(os.getenv("CHUNK_SIZE", 1000)),
-                    chunk_overlap=int(os.getenv("CHUNK_OVERLAP", 200)),
+                    chunk_overlap=int(os.getenv("CHUNK_OVERLAP", 150)),
                     add_start_index=False).split_documents(docs)
 
 
